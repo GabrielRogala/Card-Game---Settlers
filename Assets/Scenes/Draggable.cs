@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public Transform m_parentToReturn = null;
+    public Transform m_placeholderParent = null;
 
     GameObject m_placeholder = null;
     LayoutElement m_layout = null;
@@ -23,6 +24,7 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         m_placeholder.transform.SetSiblingIndex(this.transform.GetSiblingIndex());
 
         m_parentToReturn = this.transform.parent;
+        m_placeholderParent = m_parentToReturn;
         this.transform.SetParent(this.transform.parent.parent);
 
         GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -32,12 +34,15 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     {
         this.transform.position = eventData.position;
 
-        Transform placeholderParent = m_placeholder.transform.parent;
-
-        int newSiblingIndex = placeholderParent.childCount;
-        for(int i = 0; i< placeholderParent.childCount; i++)
+        if(m_placeholder.transform.parent != m_placeholderParent)
         {
-            if(this.transform.position.x < placeholderParent.GetChild(i).position.x)
+            m_placeholder.transform.SetParent(m_placeholderParent);
+        }
+
+        int newSiblingIndex = m_placeholderParent.childCount;
+        for(int i = 0; i< m_placeholderParent.childCount; i++)
+        {
+            if(this.transform.position.x < m_placeholderParent.GetChild(i).position.x)
             {
                 newSiblingIndex = i;
                 if(m_placeholder.transform.GetSiblingIndex() < newSiblingIndex)
