@@ -7,15 +7,24 @@ public class CardEntity : ScriptableObject
 {
     public int cardId;
     public string cardName;
+    public string description;
+    public int type;
+    public int actionType;
+    public int contract;
+    public int cost;
+    public int gain;
+    public int image;
 
-    public CardEntity() {
+    public CardEntity()
+    {
         cardId = 0;
         cardName = "New Card";
+        description = ".......";
+        type = 0;
+        actionType = 0;
+        contract = 0;
+        cost = 0;
+        gain = 0;
+        image = 0;
     }
-
-    //public CardEntity(int cardId, string cardName)
-    //{
-    //    this.cardId = cardId;
-    //    this.cardName = cardName;
-    //}
 }

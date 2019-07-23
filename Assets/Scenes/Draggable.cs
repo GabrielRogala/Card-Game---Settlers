@@ -17,7 +17,8 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         m_placeholder = new GameObject();
         m_placeholder.transform.SetParent(this.transform.parent);
 
-        if (m_layout == null) {
+        if (m_layout == null)
+        {
             m_layout = m_placeholder.AddComponent<LayoutElement>();
         }
 
@@ -34,24 +35,24 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     {
         this.transform.position = eventData.position;
 
-        if(m_placeholder.transform.parent != m_placeholderParent)
+        if (m_placeholder.transform.parent != m_placeholderParent)
         {
             m_placeholder.transform.SetParent(m_placeholderParent);
         }
 
         int newSiblingIndex = m_placeholderParent.childCount;
-        for(int i = 0; i< m_placeholderParent.childCount; i++)
+        for (int i = 0; i < m_placeholderParent.childCount; i++)
         {
-            if(this.transform.position.x < m_placeholderParent.GetChild(i).position.x)
+            if (this.transform.position.x < m_placeholderParent.GetChild(i).position.x)
             {
                 newSiblingIndex = i;
-                if(m_placeholder.transform.GetSiblingIndex() < newSiblingIndex)
+                if (m_placeholder.transform.GetSiblingIndex() < newSiblingIndex)
                 {
                     newSiblingIndex--;
                 }
                 break;
             }
-            
+
         }
 
         m_placeholder.transform.SetSiblingIndex(newSiblingIndex);

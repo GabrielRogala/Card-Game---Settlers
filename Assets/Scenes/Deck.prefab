@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dropZone: {fileID: 0}
-  m_cardPrefab: {fileID: 1162941098397379405, guid: f1344574b2cc4a64a9a6b64f84abb953,
+  m_cardPrefab: {fileID: 5790911702866047121, guid: cec456d0a407dbe41b7acb631a2ad036,
     type: 3}
   m_deck: []
 --- !u!1 &6418646433438995992

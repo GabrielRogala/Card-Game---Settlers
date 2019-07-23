@@ -13,8 +13,9 @@ public class DeckHandler : MonoBehaviour
         m_deck = GenerateDeck(10);
     }
 
-    public void DrawCard(int typeOfDeck) {
-        Debug.Log("Draw card from "+ typeOfDeck);
+    public void DrawCard(int typeOfDeck)
+    {
+        Debug.Log("Draw card from " + typeOfDeck);
         if (m_deck.Count > 0)
         {
             int cardId = getRandomCardId();
@@ -29,7 +30,7 @@ public class DeckHandler : MonoBehaviour
     {
         List<CardEntity> list = new List<CardEntity>();
 
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
         {
             CardEntity newCard = ScriptableObject.CreateInstance<CardEntity>();
             newCard.cardId = i;
@@ -41,7 +42,8 @@ public class DeckHandler : MonoBehaviour
         return list;
     }
 
-    public CardEntity GetCardFromId(int id) {
+    public CardEntity GetCardFromId(int id)
+    {
         if (m_deck.Count > 0)
         {
             CardEntity cadrToReturn = m_deck[id];
