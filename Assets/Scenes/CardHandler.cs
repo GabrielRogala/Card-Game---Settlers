@@ -6,9 +6,13 @@ using UnityEngine.UI;
 public class CardHandler : MonoBehaviour
 {
 
-    public Card m_card;
+    public CardEntity m_card = new CardEntity();
     public Text m_id;
     public Text m_name;
+
+    public CardHandler(CardEntity card) {
+        m_card = card;
+    }
 
     void Start()
     {
