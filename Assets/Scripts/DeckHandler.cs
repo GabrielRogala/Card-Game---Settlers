@@ -6,11 +6,12 @@ public class DeckHandler : MonoBehaviour
 {
     public Transform m_dropZone;
     public GameObject m_cardPrefab;
-    public List<CardEntity> m_deck;
+    public List<Card> m_deck;
 
     void Start()
     {
-        m_deck = GenerateDeck(10);
+        m_deck = new List<Card>();
+        m_deck.AddRange(DataHandler.instance.GetCards());
     }
 
     public void DrawCard(int typeOfDeck)
@@ -19,34 +20,18 @@ public class DeckHandler : MonoBehaviour
         if (m_deck.Count > 0)
         {
             int cardId = getRandomCardId();
-            CardEntity drawedCard = GetCardFromId(getRandomCardId());
+            Card drawedCard = GetCardFromId(getRandomCardId());
 
             GameObject gameObject = Instantiate(m_cardPrefab, m_dropZone) as GameObject;
             gameObject.GetComponent<CardHandler>().m_card = drawedCard;
         }
     }
 
-    public List<CardEntity> GenerateDeck(int size)
-    {
-        List<CardEntity> list = new List<CardEntity>();
-
-        for (int i = 0; i < size; i++)
-        {
-            CardEntity newCard = ScriptableObject.CreateInstance<CardEntity>();
-            newCard.cardId = i;
-            newCard.cardName = "New Card #" + i;
-
-            list.Add(newCard);
-        }
-
-        return list;
-    }
-
-    public CardEntity GetCardFromId(int id)
+    public Card GetCardFromId(int id)
     {
         if (m_deck.Count > 0)
         {
-            CardEntity cadrToReturn = m_deck[id];
+            Card cadrToReturn = m_deck[id];
             m_deck.RemoveAt(id);
             return cadrToReturn;
         }

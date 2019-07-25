@@ -502,6 +502,11 @@ PrefabInstance:
       propertyPath: m_dropZone
       value: 
       objectReference: {fileID: 1135917173}
+    - target: {fileID: 6418646433438995994, guid: 3d385724ddf8a984c9c3e99ab0cadd5a,
+        type: 3}
+      propertyPath: m_Text
+      value: Standard Deck
+      objectReference: {fileID: 0}
     - target: {fileID: 6418646432319265434, guid: 3d385724ddf8a984c9c3e99ab0cadd5a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -511,11 +516,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6418646433438995994, guid: 3d385724ddf8a984c9c3e99ab0cadd5a,
-        type: 3}
-      propertyPath: m_Text
-      value: Standard Deck
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d385724ddf8a984c9c3e99ab0cadd5a, type: 3}
@@ -921,6 +921,7 @@ GameObject:
   - component: {fileID: 1951209056}
   - component: {fileID: 1951209055}
   - component: {fileID: 1951209058}
+  - component: {fileID: 1951209059}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1003,5 +1004,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccee964ce5291a9429577b7f4aaeba97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1951209059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951209054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70505223f6f28b24eaf31a7799950a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
