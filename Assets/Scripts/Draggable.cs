@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public Transform m_parentToReturn = null;
     public Transform m_placeholderParent = null;
@@ -65,5 +65,11 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         GetComponent<CanvasGroup>().blocksRaycasts = true;
 
         Destroy(m_placeholder);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("click :" + eventData.ToString());
+        CardViewer.instance.ShowFullSizeCard(this.GetComponent<CardHandler>().m_card);
     }
 }

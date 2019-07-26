@@ -531,6 +531,7 @@ GameObject:
   - component: {fileID: 1043520064}
   - component: {fileID: 1043520063}
   - component: {fileID: 1043520062}
+  - component: {fileID: 1043520066}
   m_Layer: 5
   m_Name: GameFrameCanvas
   m_TagString: Untagged
@@ -621,6 +622,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1043520066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043520061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef826b00af7b8944b74f9fb1243138e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_cardFullSizePrefab: {fileID: 798442249053159177, guid: c7dbae337e3e9c44ba0f4bde68cea609,
+    type: 3}
+  m_parent: {fileID: 1043520065}
 --- !u!224 &1135917173 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1815411614170856352, guid: 4c8e167f083e5df4e8f484aa6a29c54a,
