@@ -26,6 +26,8 @@ public class CardViewer : MonoBehaviour
     {
         if (isShowed)
         {
+            Destroy(fullSizeCard);
+            fullSizeCard = Instantiate(m_cardFullSizePrefab, m_parent) as GameObject;
             fullSizeCard.GetComponent<CardHandler>().m_card = card;
         }
         else

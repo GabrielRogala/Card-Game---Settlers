@@ -9,6 +9,8 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     public Transform m_parentToReturn = null;
     public Transform m_placeholderParent = null;
 
+    private Transform m_temporatyCardHolder;
+
     GameObject m_placeholder = null;
     LayoutElement m_layout = null;
 
@@ -26,7 +28,15 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
 
         m_parentToReturn = this.transform.parent;
         m_placeholderParent = m_parentToReturn;
-        this.transform.SetParent(this.transform.parent.parent);
+
+        m_temporatyCardHolder = this.transform.parent.parent;
+        while (m_temporatyCardHolder.parent != null)
+        {
+            m_temporatyCardHolder = m_temporatyCardHolder.parent;
+        }
+
+
+        this.transform.SetParent(m_temporatyCardHolder);
 
         GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
@@ -69,7 +79,7 @@ public class Draggable : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("click :" + eventData.ToString());
+        //Debug.Log("click :" + eventData.ToString());
         CardViewer.instance.ShowFullSizeCard(this.GetComponent<CardHandler>().m_card);
     }
 }

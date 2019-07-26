@@ -24,7 +24,7 @@ public class DataHandler : MonoBehaviour
     public List<Card> GetCards()
     {
         path = Application.dataPath + "/" + filename;
-        Debug.Log("file : " + path);
+        //Debug.Log("file : " + path);
 
         try
         {

@@ -43,7 +43,7 @@ public class IMG2Sprite : MonoBehaviour
 
         // Load a PNG or JPG file from disk to a Texture2D
         // Returns null if load fails
-        Debug.Log("file : " + FilePath);
+        //Debug.Log("file : " + FilePath);
         Texture2D Tex2D;
         byte[] FileData;
 

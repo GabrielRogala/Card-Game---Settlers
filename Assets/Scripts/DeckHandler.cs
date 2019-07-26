@@ -16,7 +16,7 @@ public class DeckHandler : MonoBehaviour
 
     public void DrawCard(int typeOfDeck)
     {
-        Debug.Log("Draw card from " + typeOfDeck);
+        //Debug.Log("Draw card from " + typeOfDeck);
         if (m_deck.Count > 0)
         {
             int cardId = getRandomCardId();
