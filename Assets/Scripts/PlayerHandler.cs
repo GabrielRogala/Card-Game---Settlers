@@ -164,4 +164,12 @@ public class PlayerHandler : MonoBehaviour
         return str;
     }
 
+    public void ShowPlayerBoard()
+    {
+        Debug.Log("Show board "+this.m_name);
+        Transform parentToReturn = this.transform.parent;
+        this.transform.SetParent(parentToReturn.parent);
+        this.transform.SetParent(parentToReturn);
+    }
+
 }
